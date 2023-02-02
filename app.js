@@ -6,14 +6,13 @@ import session from 'express-session';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
 import mongoose from "mongoose";
-import bodyparser from "body-parser";
+import bodyParser from 'body-parser';
 dotenv.config()
 
 var app = express();
 
 import postRouter from './routes/post.js';
 import dalleRouter from './routes/dalle.js';
-import bodyParser from 'body-parser';
 
 
 //-------------------------------------Using modules middlewares
@@ -24,8 +23,6 @@ app.use(bodyParser.urlencoded({ extended: true, parameterLimit: '1000000000', li
 app.use(cookieParser());
 app.use(cors());
 app.listen(5000 || process.env.PORT)
-// app.use(static(join(__dirname, 'public')));
-// app.use('/static', static(join(__dirname, 'public')))
 
 //-------------------------------------Creating a server
 var IS_PRODUCTION = app.get('env') === 'production'

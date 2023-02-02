@@ -34,6 +34,6 @@ class Controller {
             res.status(500).json({ success: false, message: error })
         }
     }
-
-r}
+    
+}
 export default new Controller();
